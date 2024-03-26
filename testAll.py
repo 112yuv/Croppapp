@@ -1,5 +1,5 @@
 import pickle
-
+import bz2
 N=float(("90"))
 P=float(("42"))
 K=float(("43"))
@@ -7,8 +7,8 @@ temp=float(("20.7"))
 Hum=float(("82"))
 Ph=float(("6"))
 Rain=float(("202"))
-
-model=pickle.load(open("model.pkl",'rb'))
+sfile = bz2.BZ2File('model.pkl', 'rb')
+model=pickle.load(sfile)
 names = ["K-Nearest Neighbors", "SVM",
          "Decision Tree", "Random Forest",
          "Naive Bayes","ExtraTreesClassifier","VotingClassifier"]

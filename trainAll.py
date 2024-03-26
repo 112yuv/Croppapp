@@ -48,7 +48,9 @@ for name, clf in zip(names, classifiers):
     clfF.append(clf)
 
 import pickle
-pickle.dump(clfF, open("model.pkl",'wb'))   
+import bz2
+sfile = bz2.BZ2File("model.pkl", 'wb')
+pickle.dump(clfF, sfile)  
     
     
     
